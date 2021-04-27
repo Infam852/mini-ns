@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 0.0.1
+
+components:
+  parameters:
+    sliceId:
+      in: query
+      name: sliceId
+      required: true
+      schema:
+        type: integer
+        minimum: 0
+      description: Id of the slice.
+
+paths:
+  /slices:
+    get:
+      summary: Returns all slices.
+      description: tbd
+      responses:
+        '200':
+          description: tbd
+  /flows:
+    put:
+      summary: Register new flow
+      parameters:
+        - $ref: '#/components/parameters/sliceId'
+      responses:
+        '200':
+          description: Success
